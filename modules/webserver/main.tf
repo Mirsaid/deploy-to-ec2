@@ -4,7 +4,7 @@ resource "aws_instance" "myapp-server" {
   instance_type = var.instance_type
   #key_name = "server-key-pair"
   subnet_id             = var.subnet_id
-  vpc_security_zone_ids = [aws_security_group.myapp-sg.id]
+  vpc_security_group_ids = [aws_security_group.myapp-sg.id]
   availability_zone     = var.avail_zone
   tags = {
 
@@ -69,7 +69,7 @@ resource "aws_security_group" "myapp-sg" {
     from_port       = 0
     to_port         = 0
     protocol        = "-1"
-    cidr_block      = ["0.0.0.0/0"]
+    cidr_blocks      = ["0.0.0.0/0"]
     prefix_list_ids = []
   }
 

@@ -1,7 +1,7 @@
 resource "aws_subnet" "dev-subnet-1" {
 
   vpc_id            = var.vpc_id
-  cidr_block        = var.subnet_block
+  cidr_block        = var.subnet_cidr_block
   availability_zone = var.avail_zone
 
   tags = {
